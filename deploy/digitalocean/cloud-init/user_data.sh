@@ -11,13 +11,13 @@ cd oml-redis
 git checkout $RELEASE
 
 mkdir -p $OMLDIR/$OMLCOMP
-cp ../../common-files/docker-compose.yml $OMLDIR/$OMLCOMP
-cp ../../common-files/redis.service /etc/systemd/system
+cp ./deploy/common-files/docker-compose.yml $OMLDIR/$OMLCOMP
+cp ./deploy/common-files/redis.service /etc/systemd/system
 
 if [[ "$INSTALL_DOCKER" == "TRUE" ]]
 then
-chmod +x ../../common-files/install_docker.sh
-sh ../../common-files/install_docker.sh
+chmod +x ./deploy/common-files/install_docker.sh
+sh ./deploy/common-files/install_docker.sh
 fi
 
 cd $OMLDIR/$OMLCOMP
